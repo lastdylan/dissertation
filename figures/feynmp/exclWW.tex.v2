@@ -1,0 +1,29 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+% \usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{xWW}
+\fmfframe(30,20)(15,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(100,100)
+%bottom and top verticies
+  \fmfleft{P1,P2}
+  \fmfright{P3,W1,W2,P4}
+
+  \fmf{fermion}{P1,g1,P3}
+  \fmf{fermion}{P2,g2,P4}
+%blobs at gluon vertices, 0.16w is the size of blob
+\fmfblob{.06w}{g1,g2}
+\fmfblob{.10w}{g3}
+\fmf{photon,tension=0.2,lab.side=right,lab={\Large $\gamma$}}{g1,g3}
+\fmf{photon,tension=0.2,lab.side=right,lab={\Large $\gamma$}}{g2,g3}
+\fmf{boson,tension=0.2,lab.side=right,lab={\Large $W$}}{g3,W1}
+\fmf{boson,tension=0.2,lab.side=right,lab={\Large $W$}}{g3,W2}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

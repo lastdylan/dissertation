@@ -1,0 +1,28 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+ %\usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{hYY}
+\fmfframe(30,20)(15,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(100,100)
+\vspace*{\baselineskip}
+%bottom and top verticies
+	\fmfv{label=$\gamma$}{g2}
+	\fmfv{label=$\gamma$}{g1}
+	\fmfv{label=$H$}{H}
+  \fmfleft{H}
+  \fmfright{g1,g2}
+\fmf{dashes}{H,h}
+\fmfpoly{empty,tension=0.5, label=$W^{\pm}$}{h,v1,v2}
+\fmf{boson}{v2,g2}
+\fmf{boson}{v1,g1}
+\vspace*{\baselineskip}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

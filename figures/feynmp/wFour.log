@@ -1,0 +1,15 @@
+This is MetaPost, version 1.9991 (TeX Live 2016) (kpathsea version 6.2.2)  11 SEP 2016 18:28
+**wFour.mp
+(/usr/local/texlive/2016/texmf-dist/metapost/base/mpost.mp
+(/usr/local/texlive/2016/texmf-dist/metapost/base/plain.mp
+Preloading the plain mem file, version 1.005) ) (./wFour.mp
+(/usr/local/texlive/2016/texmf-dist/metapost/feynmf/feynmp.mp)
+feynmf: option `' needs an argument.  Ignored. [1] )
+ 
+Here is how much of MetaPost's memory you used:
+ 356 strings using 5739 characters
+ 1516680 bytes of node memory
+ 923 symbolic tokens
+ 13i,77n,26p,106b,3f stack positions out of 16i,96n,31p,200b,4f
+1 output file written: wFour.1
+

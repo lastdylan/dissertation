@@ -1,0 +1,32 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+% \usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{hhWW}
+\fmfframe(30,20)(15,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(100,100)
+\vspace*{\baselineskip}
+% 1left and right anchors
+	\fmfv{label=$W^{\pm}$}{g4}
+	\fmfv{label=$W^{\mp}$}{g3}
+	\fmfv{label=$H$}{g1}
+	\fmfv{label=$H$}{g2}
+  \fmfleft{g1,g2}
+  \fmfright{g3,g4}
+%gluon
+\fmfv{label=$\frac{M_W^2}{v^2}$}{v1}
+\fmf{dashes}{g1,v1}
+\fmf{dashes}{g2,v1}
+%quarks  
+\fmf{boson}{v1,g4}
+\fmf{boson}{g3,v1}
+\fmfdotn{v}{1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

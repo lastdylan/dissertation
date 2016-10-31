@@ -1,0 +1,41 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+ %\usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{xWWdd}
+\fmfframe(10,20)(30,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(100,100)
+\vspace*{\baselineskip}
+%bottom and top verticies
+	\fmfv{label=$p_1$}{P1}
+	\fmfv{label=$p_2$}{P2}
+	\fmfv{label=$W^-$}{W1}
+	\fmfv{label=$W^+$}{W2}
+  \fmfleft{P1,P2}
+  \fmfright{P3,W1,W2,P4}
+  \fmf{fermion}{P1,g1}
+  \fmf{fermion}{P2,g2}
+  \fmf{fermion}{g1,P3}
+  \fmf{fermion}{g2,P4}
+%blobs at gluon vertices, 0.16w is the size of blob
+\fmfblob{.15w}{g1,g2}
+\fmfblob{.10w}{v1}
+\fmf{photon,lab.side=left,lab=$\gamma$}{g1,v1}
+\fmf{photon,lab.side=right,lab=$\gamma$}{g2,v1}
+\fmf{boson}{v1,W1}
+\fmf{boson}{v1,W2}
+\fmffreeze
+\fmfi{fermion}{vpath (__g2,__P4) shifted (thick*(-5,0.5))}
+\fmfi{fermion}{vpath (__g2,__P4) shifted (thick*(+5,0.5))}
+\fmfi{fermion}{vpath (__g1,__P3) shifted (thick*(+5,0.5))}
+\fmfi{fermion}{vpath (__g1,__P3) shifted (thick*(-5,0.5))}
+\vspace*{\baselineskip}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

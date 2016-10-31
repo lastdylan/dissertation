@@ -1,0 +1,17 @@
+page 1
+1. controlled particles --> subatomic particles
+2. know the magnetic field and the current required in the solenoid (dont have to write in)
+3. keep colloquial language to a minimali
+4. trt distinguishes between pions and electron... electrons always have more hits 
+
+
+Hussein
+1. Figure 1.3 should be fixed (find a better picture)
+2. photons dont leave tracks in the ID
+3. ID only tracks charged particles
+4. 
+
+
+Organizational
+1. MC generation before Object selection
+  * hits and everything

@@ -1,0 +1,52 @@
+%1. Event generation
+% 	- data output ... HepMC
+%	- generates prompt decay particles (Z, W, etc) and stores 'stable' ones
+%		* unstable particles decay before reaching detector
+%		* so, no need to consider detector geometry at this stage
+%	- Events with desirable properties may be kept at this stage, otherwise discarded
+%3. Records, called 'truth', religiously kept
+%	- Generation
+%		* incoming/outgoing particles in hard scatter
+%		* decay products
+%		* simulated or not
+%	- Used to evaluate object reconstruction
+%
+%
+%
+\par Particles with lifetimes such that they can traverse at least a femtometer from the collision 
+point are considered stable. Hadrons from parton hadronization are also considered stable. 
+These are run into a simulation of the ATLAS detector to mimic real particles. 
+
+\par Data used to simulate the ATLAS detector is stored in several databases.
+This data is made up of details describing physical volumes and material types. 
+Physical volumes are used to model sub-detector components, made up of their 
+corresponding material types. Ultimately, this 
+data comprises a complex arrangement of hundreds of materials and hundreds of thousands of 
+physical volumes. For example, calorimeter sub-detectors are made up of over 100 000 physical 
+volumes that require about 40~MB or memory to load. The total memory required to load 
+the entire ATLAS detector from these databases is almor 300~MB.  
+
+\par Simulation of the detector's response to particles is handled by GEANT4~\cite{geant4}. GEANT4 
+is a toolkit that provides models of how particles traverse through several geometries 
+and material types. During Run I, GEANT4 version 9.4 was used. Version 9.6 was used 
+during Run II. This tookit allows the ability to turn on and off detector components, 
+reducing the memory needed to load the detector. It also allows realignments of sub-detectors 
+to match simulation conditions to those in specific data runs. This flexibility has enabled several 
+standardized detector setups that run faster than loading the whole detector. One of these 
+setups that is used in this thesis is ATLFAST2~\cite{PUB-2010-013}; it uses full simulation for the 
+Inner Detector and the Muon Spectrometer, but uses a simplified version of the calorimeter 
+simulation. 
+
+\par Particle decays, such as photon conversions, are added to the truth record 
+at this stage. The detector response, through so-called `hits', is stored in a separate file.   
+The hits are inputs to the digitization stage, where the analog signals are converted to 
+`digits'. Other simulated $pp$ collisions are overlaid on the primary collision at 
+a known rate to mimic pileup effects. This rate would later be adjusted according to the rate 
+extracted from data. Detector noise is also added to the event at this stage.  
+The event is then passed through the L1 trigger system. Subsequent treatment of simulation data is identical 
+to that of real data expect that simulated events that fail the L1 trigger are 
+not discarded. The failure is however recorded in the event. 
+The output of both simulated data and real data is in the Raw Data Object (RDO) format. This output is 
+finally passed through the HLT, and particles are reconstructed from the digitized signals. 
+This reconstruction is discussed in the next chapter.  
+

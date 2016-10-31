@@ -1,0 +1,106 @@
+\par The physics objects used in this analysis are electrons, muons, jets and missing 
+transverse energy. Tracks, regardless of what physics object they are associated with, 
+are also used. Reconstruction and identification of these objects is discussed in detail 
+in Chapter~\ref{obj}. This section summarizes other selection criteria imposed on these 
+objects, specific to this analysis. 
+
+\par Track reconstruction is discussed in Section~\ref{sec:idtracks}. Tracks used here are those 
+reconstructed from the Inner Detector (ID). Other than satisfying all the track quality criteria 
+outlined in the said section, they were required to have left at least 1 hit in the Pixel 
+Detector, and 4 hits in the Semi-Conductor Tracker (SCT). Additionally, they were required to have 
+$\pt$ of at least 400~\MeV. 
+
+\par Electron reconstruction and identification is discussed in Section~\ref{sec:eleReco}, along with 
+the associated corrections and calibrations. The electrons used here were reconstructed from matches between 
+calorimeter energy deposits and ID tracks. Since the ID is limited to $|\eta|<2.47$ and the transition region 
+between the barrel and end-cap calorimeters ($1.37<|\eta|<1.52$) is a dead region, electron candidates are required 
+to not be in the calorimeter transition region while being within $|\eta|<2.47$. So, only central electrons 
+were considered. They were also required to pass the very tight likelihood identification selection 
+criteria and have $\pt$ of at least 10~\GeV. The electron \pt\ was calibrated and 
+corrected as discussed in Section~\ref{sec:eleCorr}. Additional isolation criteria were applied to suppress 
+backgrounds from jets that were reconstructed as electrons, both in the calorimeter and tracking 
+measurements. As shown in Section~\ref{sec:eleCorr}, such background contamination is energy (or \pt) 
+dependent, so these isolation criteria were binned in electron \eT\ and \pt, where \eT was measured 
+from the calorimeters and \pt\ was measured from the ID. The variable of interest in defining isolation is 
+{\it EtCone30} (or {\it PtCone30}): the \eT\ (or \pt) in a cone of $\Delta R<0.3$ around the electron candidate, excluding 
+\eT\ (or \pt) from the electron candidate. The isolation criteria is such that EtCone30 (PtCone30) is less 
+than a certain fraction of the electron, \eT\ (\pt). Table~\ref{tab:eleIso} shows this isolation selection criteria 
+for electrons. 
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|l|cc|}
+\hline
+           								& Condition                & Isolation Criterion   \\
+\hline\hline
+					& &  \\
+\multirow{3}{*}{Calorimeter}  &  $E^{e}_{\mathrm{T}} < 15$~GeV	   & $\mathrm{EtCone30} / E^{e}_{\mathrm{T}} < 0.20$ \\
+													& 	$15 \le E^{e}_{\mathrm{T}} < 20$~GeV & $\mathrm{EtCone30} / E^{e}_{\mathrm{T}} < 0.24$  \\
+													& 	$E^{e}_{\mathrm{T}} \ge 20$~GeV & $\mathrm{EtCone30} / E^{e}_{\mathrm{T}} < 0.28$  \\
+					& &  \\
+\hline
+					& &  \\
+\multirow{3}{*}{Track}  &  $p^{e}_{\mathrm{T}} < 15$~GeV &  $\mathrm{PtCone30} / p^{e}_{\mathrm{T}} < 0.06$  \\
+												&  $15 \le p^{e}_{\mathrm{T}} < 20$~GeV &  $\mathrm{PtCone30} / p^{e}_{\mathrm{T}} < 0.08$ \\
+                        & $p^{e}_{\mathrm{T}} \ge 20$~GeV & $\mathrm{PtCone30} / p^{e}_{\mathrm{T}} < 0.10$ \\
+					& &  \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Electron isolation criteria.}
+\label{tab:eleIso}
+\end{table}
+
+\par Muon reconstruction and identification is discussed in Section~\ref{sec:muReco}.
+In this analysis, combined (CB) muons were used. These use information from both the 
+muon spectrometer (MS) and the ID. Apart from the selection criteria outlined in 
+Section~\ref{sec:muReco}, these muons were required to have $\pt>10~\GeV$ and be within 
+$|\eta|<2.47$ because of the ID pseudorapidity limitation. Tracks from the ID were also required 
+to have at least 1 hit in the Pixel Detector and 5 hits in the SCT. Holes in the SCT (see Figure~\ref{fig:mstrackQ})
+were not allowed to be more than 2. Isolation criteria similar to that applied on electron 
+candidates were also applied on muon candidates, to suppress background from jets 
+reconstructed as muons. Table~\ref{tab:muIso} lists the isolation criteria.    
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|l|cc|}
+\hline
+           								& Condition                & Isolation Criterion   \\
+\hline\hline
+					& &  \\
+\multirow{4}{*}{Calorimeter}  & $p^{\mu}_{\mathrm{T}} < 15$~GeV &  $\mathrm{EtCone30} / p^{\mu}_{\mathrm{T}} < 0.06$ \\
+													    & $15 \le p^{\mu}_{\mathrm{T}} < 20$~GeV & $\mathrm{EtCone30} / p^{\mu}_{\mathrm{T}} < 0.12$ \\
+															& $20 \le p^{\mu}_{\mathrm{T}} < 25$~GeV & $\mathrm{EtCone30} / p^{\mu}_{\mathrm{T}} < 0.18$ \\
+												      & $p^{\mu}_{\mathrm{T}} \ge 25$~GeV & $\mathrm{EtCone30} / p^{\mu}_{\mathrm{T}} < 0.30$ \\
+					& &  \\
+\hline
+					& &  \\
+\multirow{3}{*}{Track}  & $p^{\mu}_{\mathrm{T}} < 15$~GeV &  $\mathrm{PtCone30} / p^{\mu}_{\mathrm{T}} < 0.06$ \\
+												& $15 \le p^{\mu}_{\mathrm{T}} < 20$~GeV & $\mathrm{PtCone30} / p^{\mu}_{\mathrm{T}} < 0.08$ \\
+                        & $p^{\mu}_{\mathrm{T}} \ge 20$~GeV & $\mathrm{PtCone30} / p^{\mu}_{\mathrm{T}} < 0.12$ \\
+					& &  \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Muon isolation criteria.}
+\label{tab:muIso}
+\end{table}
+
+\par In contrast to electron and muon selection criteria in the charged Higgs boson search, electrons 
+and muons in this analysis were not required to satisfy any selection criteria based on the 
+impact parameters or their significance. 
+
+\par Jet reconstruction is discussed in Section~\ref{sec:jets}. 
+Jets used in this analysis were reconstructed using the anti-kt 
+algorithm with $R=0.4$. They were also required to fall within $|\eta|<4.5$ and have at least 
+25~\GeV\ in \pt\ to suppress jets from pileup. While energy scale and resolution corrections 
+were applied on these jets, all corrections that depend on the position of the primary vertex 
+were not applied. Examples of such corrections are the origin correction, JVF and JVT.\footnote{JVT was 
+developed for use during Run II anyway.} Reasons for refraining from such corrections will become 
+clearer in the following sections.     
+
+\par Reconstruction of missing transverse energy, \met, is discussed in 
+Section~\ref{sec:met}. In particular, the \met\ used here reconstructed the soft 
+terms in the \met\ from calorimeter energy deposits that were not 
+associated to any other physics objects. 
+ 

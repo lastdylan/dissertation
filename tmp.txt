@@ -1,0 +1,7 @@
+
+@misc{ATLAS:lumi2012,
+  author = {ATLAS Collaboration},
+  title = {{Public Results 2012, ATLAS Experiment}},
+  note = {\url{https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResults#2012_pp_Collisions}},
+  year = {2016}
+}

@@ -1,0 +1,32 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+% \usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{z2WW}
+\fmfframe(20,20)(15,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(100,100)
+\vspace*{\baselineskip}
+% 1left and right anchors
+	\fmfv{label=$W_{\gamma}$}{g4}
+	\fmfv{label=$A_{\alpha}/Z_{\alpha}$}{g2}
+	\fmfv{label=$W_{\beta}$}{g3}
+	\fmfv{label=$A_{\mu}/Z_{\mu}$}{g1}
+  \fmfleft{g1,g2}
+  \fmfright{g3,g4}
+%gluon
+\fmfv{}{v1}
+\fmf{boson}{g1,v1}
+\fmf{boson}{v1,g2}
+%quarks  
+\fmf{boson}{v1,g3}
+\fmf{boson}{g4,v1}
+\fmfdotn{v}{1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

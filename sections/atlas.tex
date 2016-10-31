@@ -1,0 +1,35 @@
+ATLAS~\cite{PERF-2007-01} is a multipurpose cylindrical detector built around one 
+of the LHC collision points; this particular collision point is referred to 
+as Point 1 (P1) in this thesis. The ATLAS detector comprises a group of pixel detectors 
+ and drift-tubes for tracking, calorimeters for energy measurements, and the muon spectrometer 
+dedicated to muon tracking. The coordinate system used to describe this composite 
+arrangement of sub-detectors is a right-handed one with the origin at the nominal interaction point (IP) 
+in the center of the detector and the $z$-axis along the beam direction. The $x$-axis 
+points from the IP to the center of the LHC ring
+and the $y$-axis points upward. Cylindrical coordinates ($r,\phi$) are used in the transverse ($x,y$) plane,
+$\phi$ being the azimuthal angle around the $z$-axis. The pseudorapidity is defined in terms of the polar angle
+$\theta$ as $\eta=-\ln\tan(\theta/2)$. The angular distance $\Delta R$ in the $\eta$-$\phi$ space is defined as 
+$\Delta R = \sqrt{(\Delta\eta)^2 + (\Delta\phi)^2}$. Figure~\ref{fig:coord} illustrates this arrangement.  
+
+\begin{figure}
+	\centering
+   \includegraphics[width=0.8\textwidth]{figures/Figures_T_Coordinate.png}
+	\caption{The coordinate system used by the ATLAS experiment to describe the ATLAS detector}
+	\label{fig:coord}
+\end{figure}
+
+\subsection{The Inner Detector}
+\label{sec:ID}
+\input{sections/innerDetector.tex}
+
+\subsection{Calorimeters}
+\label{sec:calo}
+\input{sections/calorimeters.tex}
+
+\subsection{The Muon Spectrometer}
+	\label{sec:muonSpec}
+\input{sections/muonSpec.tex}
+
+\subsection{The Trigger and Data Acquisition System}
+	\label{sec:trigger}
+\input{sections/trigger.tex}

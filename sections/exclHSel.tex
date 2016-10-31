@@ -1,0 +1,217 @@
+\par Evidence for the exclusive Higgs boson was searched for in events in which the Standard Model 
+Higgs boson decays to a pair of \Wpm\ bosons, which in turn decay leptonically. This leptonic 
+decay includes $\tau$ leptons, but only those that decay leptonically. Effectively, the final state leptons 
+are electrons and muons. The topology for this decay channel is therefore 
+
+\begin{equation}
+gg\to[H]\to[\Wplus][\Wminus]\to[l][l][\met],
+\label{eq:topExclH}
+\end{equation} 
+ 
+where $l$ represents the leptons: $\mu$ or $e$. 
+
+\par The topology in Equation~\ref{eq:topExclH} is the same topology used to search for the inclusive 
+Higgs boson in Ref~\cite{ATLAS:2014aga}. The event selection criteria in this analysis mimics the same 
+selection criteria in Ref~\cite{ATLAS:2014aga}. Here, the flavor of the two leptons was required to be 
+opposite to suppress backgrounds from \Zee\ or \Zmm\ events. Signal events were therefore required to have only 
+two leptons of different flavor satisfying the selection criteria outlined in Section~\ref{sec:objExclH}.
+The impact parameters of the lepton tracks with respect to the beamline in the ID, $z_0$, 
+were required to be less than 1.0~mm from each other. In addition, the charges of the two leptons 
+were required to be opposite because the SM Higgs boson is neutral to electromagnetic charge.  
+
+\par Of the two leptons in signal events, the one with the largest \pt is referred to as the {\it leading} 
+lepton, otherwise it is the {\it sub-leading} lepton. The leading lepton was required to have at least 
+25~\GeV\ in \pt\ and the sub-leading lepton was required to have at least 15~\GeV\ in \pt. Moreover, the mass 
+of the di-lepton system, \mll, was required to be at least 10~\GeV. 
+This selection is referred to as the {\it pre-selection}.
+Recalling that only different flavor lepton 
+pairs are considered, the symbol \mll\ is used interchangeably with \memu\ to represent the transverse 
+mass of the di-lepton system.
+
+\begin{figure}[!h]
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/emme-CutMll-Mll-log.pdf}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/emme-CutMll-DPhill-log.pdf}
+\end{subfigure} 
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/emme-CutMll-MT-log.pdf}
+\end{subfigure} 
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/emme-CutMll-Ptll-log.pdf}
+\end{subfigure} 
+\caption{Plots showing the expected signal and background distributions after pre-selection}
+\label{fig:preselExclH}
+\end{figure}
+
+\par Figure~\ref{fig:preselExclH} shows expected distributions for several kinematic quantities for background 
+and signal after the pre-selection criteria has been applied. Contributions from all the backgrounds are stacked on each 
+other to total the Standard Model (SM) prediction. The hashed lines on the SM prediction is the statistical 
+uncertainty, obtained by assuming that the predicted number of events follow a Poisson distribution. 
+The signal prediction is not stacked on the background, and is scaled by 200 for better visibility. 
+While these distributions were predicted by simulation, a full discussion on background 
+treatment is detailed in Section~\ref{sec:bkgExclH}.
+
+\par The mass of the di-lepton system, \memu, has already been introduced above. While most of the backgrounds 
+have reasonably high \memu, almost all the signal is 
+expected to fall in the $\memu<100~\GeV$ region, after all the pre-selection criteria has been applied. 
+In particular, the $WW$ distributions tend to have high \memu\ than the signal. This is expected because with a 
+spin-0 quantum number, the Higgs boson decays to final state leptons that have a smaller angular separation 
+than the leptons from $WW$ decays. This small angular separation lowers \memu.   
+This hints 
+towards additional selection criteria dependent on the mass and angular separation of the di-lepton system.
+Figure~\ref{fig:preselExclH} shows both \memu\ and \dFem, where most of the signal lies in the 
+region $\dFem<2.0$.      
+
+\par The transverse mass, \mT, of the di-lepton-\met\ system shown in Figure~\ref{fig:preselExclH} 
+is defined as  
+
+\begin{equation}
+  \label{eq:mT}
+  \mT = \sqrt{(E_{\mathrm T}^{e\mu}+\met)^{2} - |\boldsymbol{\pTemu} + \boldsymbol{ p_{\mathrm T}^{\mathrm{miss}}}|^{2}},
+\end{equation}
+where $E_{\mathrm T}^{e\mu} = \sqrt{|\boldsymbol{\pTemu}|^{2}+m_{e\mu}^{2}}$ and $|\boldsymbol{ p_{\mathrm T}^{\mathrm{miss}}}|=\met$. 
+This quantity essentially is the mass of the Higgs boson, so it is expected to peak at 125~\GeV\ and have 
+a small tail that is mostly in the region $\mT<140~\GeV$.
+
+\par The transverse mass of the di-lepton system, \pTll\ or \pTemu, 
+is expected to be relatively higher for signal than it is for backgrounds such as $V$+jets and 
+exclusive di-leptons. QCD multi-jets, not shown in Figure~\ref{fig:preselExclH}, are also expected 
+to have low \pTemu\ when the jets are mis-identified as leptons. To suppress these backgrounds, a selection 
+of $\pTemu>30~\GeV$ was imposed.  
+
+\par A dedicated selection was also developed to separate exclusive from inclusive events. This criterion 
+is referred to here as the {\it exclusivity selection} or \DZ\ in short. Its perfomance in simulation and 
+data was tested, and is formally introduced in the next two sections.   
+
+\par From the distributions in Figure~\ref{fig:preselExclH} the following additional selection were applied to 
+isolate Higgs-like events from the $\WW$ spectrum: $\mll<55~\GeV$, $\mT<140~\GeV$ and $\dFll<1.8$. This selection 
+was found to be optimal without any additional 
+ \met\ criteria.  
+
+\par Table~\ref{tab:evSel} summarizes all the selection criteria discussed in this section. 
+Figure~\ref{fig:prelimMT} shows the expected \mT\ distributions in the signal region, minus 
+the \mT\ selection criterion. Modified distributions will be shown in later sections after 
+several calibrations and corrections have been applied to the background processes. In any case, exclusive 
+and inclusive $\WW$ was expected to dominanate the background processes that contaminated 
+the signal region. 
+
+\begin{table}
+\centering
+\begin{tabular}{|l|c|}
+\hline
+                                & Selection \\
+\hline\hline
+& \\
+\multirow{3}{*}{Preselection } & Oppositely charged $e\mu$ final states   \\
+                                				&  $\pT^{\ell 1} > 25~\GeV$ and $\pT^{\ell 2} > 15~\GeV$ \\
+																		    & $\memu > 10~\GeV$     \\
+& \\
+\hline
+& \\
+				& $\pTemu > 30~\GeV$\\
+                          & Exclusivity selection, \DZ\\
+& \\
+\hline
+& \\
+\multirow{3}{*}{Spin-0 Higgs boson}   & $\memu <55~\GeV$      \\
+							    & $\dFem < 1.8$       \\
+                                & $\mT <140$~\GeV       \\
+& \\
+\hline
+\end{tabular}
+\caption{Event selection criteria.}  
+\label{tab:evSel}
+\end{table}
+
+\begin{figure}[!h]
+\centering
+   \includegraphics[width=0.8\textwidth]{figures/emme-CutDPhill-MT20-log.pdf}
+\caption{Plots showing the preliminary expected \mT\ distributions in the signal region, minus the \mT\ selection}
+\label{fig:prelimMT}
+\end{figure}
+
+\subsection{Exclusivity Selection}
+\par The exclusivity selection developed in this analysis is based on the final state particles 
+shown in the topology in Equation~\ref{eq:topExclH}. With only two leptons in the final state, these 
+exclusive events are expected to have exactly two tracks in the event. These tracks are in turn expected 
+to be matched to the said leptons.  
+
+\par As mentioned in previous sections, tracks in this analysis were parametrized by impact parameters 
+measured with respect to the beamline. It is worth mentioning that the most common track 
+parametrization in ATLAS is with respect to the primary vertex (PV), defined as the vertex with the 
+highest track sum \pt. The default ATLAS primary vertex is referred to as PV in this text, and the vertex from which two tracks 
+in exclusive processes originate is referred to as the di-lepton vertex. The 
+probability that a track from pileup events is mistakenly associated with the PV, especially 
+in events that have few tracks, is substantial. When that happens, the position of the PV in 
+the $z$ coordinate may get distorted. This, as will be shown in the next paragraphs, would reduce 
+the efficiency of the exclusivity selection. So an effort to refrain from using quantities that 
+rely on the ATLAS PV was made.  
+
+\par As shown in Chapter~\ref{obj}, the fit method used to reconstruct tracks is different 
+from that used to reconstruct electron tracks in the ID. In addition, the measured ID hits for 
+muons candidates may be different as the combined MS+ID track fit is used for CB muons. Thus, 
+matching tracks to leptons in necessary. A track was considered matched to a lepton track if it 
+satisfied the following conditions :
+\begin{enumerate}
+\item passes all track quality selection criteria;
+\item has at least 2~\GeV\ in \pt;
+\item $\Delta z_0(\text{track,lepton})$ is less than 1 mm;
+\item and $\Delta R(\text{track,lepton})$ is less than 0.01.
+\end{enumerate}   
+In the case where a track is matched to both leptons in the event, preference is given to the lepton 
+closest in $z_0$, measured with respect to the beamline. Figure~\ref{fig:trkMatch} shows the number of tracks 
+matched to electrons and muons in the  simulated signal sample of events. Electrons, since they undergo 
+brehmsstrahlung at a higher rate than muons, have a larger fraction of two matched tracks than muons. It 
+is not expected to match 3 or more tracks to either of the leptons. 
+
+\begin{figure}[!h]
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/em-CutChannels-nTrkMatch0-log.pdf}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/me-CutChannels-nTrkMatch0-log.pdf}
+\end{subfigure} 
+\caption{Plots showing the number of tracks matched to the electron (left) and the muon (right) tracks}
+\label{fig:trkMatch}
+\end{figure}
+
+\par To ensure that the two leptons in the event are indeed from the di-lepton 
+vertex, their $z_0$ positions, $z_0^1$ and $z_0^2$, were required to be within 1 mm of each other. 
+The 1 mm value was arrived at after measuring the $z_0$ resolution in both data and simulation and 
+observing that they safely agree within 1 mm. The position of the di-lepton vertex in $z_0$, $z^{av}_0$, was then 
+taken as the average of $z_0^1$ and $z_0^2$. Tracks not matched to either of the leptons 
+were tested for absolute distance in $z_0$ from $z_0^{av}$. Figure~\ref{fig:exclCartoon} 
+illustrates this geometry. For \DZ, the closest unmatched track (also referred to as an {\it extra} track) 
+was required to be at least 1 mm way from $z_0^{av}$. 
+
+\begin{figure}[!h]
+\centering
+   \includegraphics[width=0.8\textwidth]{figures/cartoon.eps}
+\caption{Illustration of the geometry of the exclusivity selection criteria}
+\label{fig:exclCartoon}
+\end{figure}
+
+\par Although \DZ\ was observed to be sensitive to pileup events, the signal selection 
+efficiency in the pileup range expected during the Run I data taking period was not terrible. At 
+worst the signal efficiency was about 50\%, when the number of pileup events ($\mu$) was 
+greater than 30. During Run I, the average number of pileup events was 20.7. Figure~\ref{fig:pileupEff} 
+shows the signal efficiency of this selection, simulated using FPMC, plotted against 
+the number of pileup event, $\mu$. For $\mu=20.7$, the efficiency was found to be around 58\% 
+in simulation. The was compared to the efficiency measured in data, as discussed in the 
+next section. 
+
+\begin{figure}[!h]
+\centering
+ \includegraphics[width=0.8\linewidth]{figures/muFit.eps} 
+\caption{Plot of the efficiency of the exclusivity selection, extracted from the
+exclusive Higgs boson signal simulation, is plotted 
+against the average number of interactions per beam crossing
+$\mu$}
+\label{fig:pileupEff}
+\end{figure}
+
+\subsection{Performance and calibration of exclusivity}
+\label{sec:exclCalib}
+\input{sections/exclTests.tex}

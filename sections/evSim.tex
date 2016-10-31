@@ -1,0 +1,35 @@
+\chapter{ATLAS Simulation Chain}
+\begin{chapabstract}
+\par Simulations are widely used to predict rates of physics processes and their kinematic properties. 
+Within ATLAS, Monte Carlo methods are the simulation of choice. The process of producing the simulation 
+data is referred to in this Chapter as the `ATLAS Simulation Chain'. This chain essentially comprises three 
+stages. First is the `Event Generation', during which $pp$ collisions are simulated and physics processes at 
+a high energy scale are generated. In addition, parton showers and subsequent hadronizations are simulated. 
+Second is the `Detector Simulation', during which the particle traversal in the ATLAS detector is simulated.
+During `Digitization', detector simulation output is converted to `digits'. The digitized simulation 
+data is eventually passed through the standard ATLAS Trigger system and saved on disk just like real data.      
+
+\par This chapter is divided into two sections. Event generation is discussed in Section~\ref{sec:evgen}. 
+Here, cross section for physics processes is formulated, the parton shower is developed, and hadronization 
+models are presented. In addition, Monte Carlo generators used in this thesis are presented. Section~\ref{sec:detsim} 
+discussed the ATLAS detector simulation and the subsequent treatment of simulation data.  
+\end{chapabstract}
+\label{sim}
+
+\section{Event Generation}
+\label{sec:evgen}
+\input{sections/evgen.tex}
+
+\section{Detector Simulation and Data Management}
+\label{sec:detsim}
+\input{sections/detsim.tex}
+
+%\begin{chapsummary}
+%\par The ATLAS Simulation chain was presented in this Chapter. Models for hard scattering, 
+%parton showering and hadronizations were also presented. Several Monte Carlo generators that 
+%implement these models were outlined. Such implementations are such that particular generators 
+%work best for modelling specific physics processes. Simulation of particle traversal in the ATLAS 
+%detector through GEANT4 was discussed. Both Fast and Full simulation techniques were presented. 
+%Finally, simulation data treatment after the simulation chain was discussed and shown to be almost identical 
+%to treatment of real data save for a few details in the triggering system.  
+%\end{chapsummary}

@@ -1,0 +1,64 @@
+\chapter{Physics Objects}
+\begin{chapabstract}
+The link between the particles introduced in Chapter~\ref{theory} and the experimental setup introduced in 
+Chapter~\ref{expSetup} is established in this chapter. The signatures printed by these particles in 
+the ATLAS detector are referred to here collectively as {\it physics objects}. Dedicated algorithms are used to 
+{\it reconstructed} these physics objects from detector electrical signals. In some cases, other algorithms are used to 
+further {\it identify} the physics objects from the reconstructed objects. Reconstruction and identification
+procedures are described in this chapter in detail for each of the physics objects used in analyses discussed 
+in Chapters~\ref{chargedH} and \ref{exclH}. Photons were not directly used in either 
+analysis, so their reconstruction and identification are not discussed here. Rather, sufficient references are supplied.   
+\end{chapabstract}
+\label{obj}
+
+	\section{Tracks}
+	\label{sec:tracking}
+\par As explained in Chapter~\ref{expSetup}, charged particles leave traces that describe 
+their traversal paths in the ATLAS detector's Inner Detector (ID) and the Muon Spectrometer (MS).
+These traces are known as {\it tracks}, and the methodology of recording these tracks 
+is referred to as {\it tracking}. In Sections~\ref{sec:ID}
+ and \ref{sec:muonSpec}, it was shown that the MS exclusively tracks muons 
+while the ID tracks any charged particles. Because of this difference in purpose, 
+different approaches are taken when reconstructing tracks in the MS and ID. 
+Since any relatively long-lived charged particles leave tracks in the ID, no 
+separate identification schemes are applied to identify tracks in their own right. 
+This section discusses tracking systems in the ID and MS. 
+ 
+\input{sections/tracking.tex}
+	
+	\section{Electrons}
+	\label{sec:ele}
+\input{sections/electrons.tex}	
+
+	\section{Muons}
+	\label{sec:mu}
+\input{sections/muons.tex}
+
+	\section{Jets}
+	\label{sec:jets}
+\input{sections/jets.tex}
+
+	\section{Taus}
+	\label{sec:tau}
+\par As discussed in Section~\ref{sec:sm}, of all leptons the $\tau$ lepton has the smallest 
+mean lifetime of \SI{2.9e-13}{\s} ($c\tau \approx \SI{87}{\micron}$), 
+decaying inside the LHC beam pipe.\footnote{The LHC beam pipe has 
+an external diameter of about 5.3~cm.}
+Also the heaviest of all the leptons, the $\tau$ lepton is the only lepton 
+heavy enough to decay to hadrons, with a branching ratio of approximately 
+65\%. The said hadrons are dominated by neutral and charged pions, although 2.7\% of the 
+time the $\tau$ lepton decays to kaons. 
+
+\input{sections/taus.tex}
+
+	\section{Missing Energy}
+	\label{sec:met}
+\input{sections/met.tex}
+
+%\begin{chapsummary}
+%Reconstruction of physics objects that are later used in Chapters~\ref{chargedH} and \ref{exclH} from the 
+%ATLAS detector signals was discussed in this chapter. Photons were not discussed, but references were supplied. 
+%Modelling of these reconstruction and identification schemes in Monte Carlo simulation was described, discussing any 
+%necessary corrections that were applied. Evaluation of systematic uncertainties on each of these schemes was outlined, and 
+%the sizes of the uncertainties were given.  
+%\end{chapsummary}

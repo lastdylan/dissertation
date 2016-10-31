@@ -1,0 +1,30 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+% \usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{gluonThree}
+\fmfframe(15,20)(60,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(100,100)
+\vspace*{\baselineskip}
+% left and right anchors
+	\fmfv{label=$A_{\alpha}^{b}$}{g1}
+	\fmfv{label=$A_{\beta}^{c}$}{g2}
+	\fmfv{label=$A_{\mu}^{a}$}{g}
+  \fmfleft{g}
+  \fmfright{g1,g2}
+%gluon
+\fmfv{label=$\propto-\sqrt{4\pi\alpha_{s}}f^{abc}$, label.dist=20}{v1}
+\fmf{gluon}{g,v1}
+%quarks  
+\fmf{gluon, tension=2}{g1,v1}
+\fmf{gluon, tension=2}{v1,g2}
+\fmfdotn{v}{1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

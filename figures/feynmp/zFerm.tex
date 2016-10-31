@@ -1,0 +1,33 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+% \usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{zFermion}
+\fmfframe(15,20)(30,15){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(150,100)
+\vspace*{\baselineskip}
+% left and right anchors
+	\fmfv{label=$f$}{q1}
+	\fmfv{label=$f$}{q2}
+	\fmfv{label=$Z_{\mu}$}{g}
+  \fmfleft{g}
+  \fmfright{q1,q2}
+%gluon
+\fmfv{label=$\frac{e\gamma^\mu(\sigma_3-2\sin^2\theta_W Q_f)}{2\sin\theta_W\cos\theta_W}$,label.dist=15}{v1}
+\fmf{boson}{g,v1}
+%quarks  
+\fmf{fermion, tension=0.7}{q1,v1}
+\fmf{fermion, tension=0.7}{v1,q2}
+\fmfdotn{v}{1}
+%\fmffreeze
+%\fmfshift{10left}{v1}
+%\vspace*{\baselineskip}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

@@ -1,0 +1,262 @@
+\newcommand*{\UTALATEXPATH}{latex/}
+\documentclass[12pt]{report}
+\usepackage[english]{babel}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{chemformula}
+\usepackage{braket}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{psfrag}
+\usepackage{multirow,bigdelim}
+      \usepackage{\UTALATEXPATH atlaspackage}
+      \usepackage{\UTALATEXPATH utathesis}
+      \usepackage{\UTALATEXPATH atlasmisc}
+      \usepackage{\UTALATEXPATH atlasmath}
+      \usepackage{\UTALATEXPATH atlasparticle}
+      \usepackage{\UTALATEXPATH atlasphysics}
+      \usepackage{\UTALATEXPATH atlasprocess}
+      \usepackage{\UTALATEXPATH atlasbsm}
+      \usepackage{\UTALATEXPATH atlasheavyion}
+      \usepackage{\UTALATEXPATH graphicx} % to insert PostScript figures
+%      \usepackage{\UTALATEXPATH amsmath}
+\usepackage{graphicx}
+\usepackage{breqn}
+%\usepackage[skip=0cm,list=true,labelfont=it]{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{hyperref}
+\usepackage[acronym]{glossaries}
+\usepackage{rotating} % for sideways tables/figures
+\usepackage{latexsym} % to get LASY symbols
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.13}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some new commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\rectangle}[2]{{% #1 = width, #2 = height
+  \fboxsep=-\fboxrule\sbox0{}\wd0=#1\ht0=#2\relax\fbox{\box0}}}
+
+\newcommand{\reftemp}[1]{#1}
+
+\def\checkmark{\tikz\fill[scale=0.3](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\makeatletter
+\newenvironment{chapabstract}{%
+    }%
+   {\par}
+\makeatother
+
+\makeatletter
+\newenvironment{chapsummary}{%
+   \begin{center}%
+	\bfseries Summary
+    \end{center}}%
+   {\par}
+\makeatother
+
+\newcommand*{\yyWW}{\ensuremath{\gamma\gamma \to W^+W^-}}
+\newcommand*{\yyll}{\ensuremath{\gamma\gamma \to \ell^+\ell^-}}
+\newcommand*{\yymumu}{\ensuremath{\gamma\gamma \to \mu^+\mu^-}}
+\newcommand*{\yyee}{\ensuremath{\gamma\gamma \to e^+e^-}}
+\newcommand*{\yytautau}{\ensuremath{\gamma\gamma \to \tau^+\tau^-}}
+\newcommand*{\gamgamWWll}{\ensuremath{\gamma\gamma \to W^+W^- \to \ell^{+} \nu \ell'^{-} \bar{\nu}}}
+\newcommand*{\ggHWWll}{\ensuremath{gg\ra H \ra W^+W^- \ra \ell^{+} \nu \ell'^{-} \bar{\nu}}}
+\newcommand*{\DrellYantomumu}{\ensuremath{Z/\gamma^* \to \mu^+\mu^-}}
+\newcommand*{\DrellYantotautau}{\ensuremath{Z/\gamma^* \to \tau^+\tau^-}}
+\newcommand*{\ggww}{\textsc{gg2ww}\xspace}
+\newcommand*{\tauvis}{\ensuremath{\tau_{\text{had-vis}}}}
+\newcommand*{\cHtaunu}{\ensuremath{H^+ \to \tau^+\nu}}
+\newcommand*{\Wjets}{\ensuremath{W+\text{jets}}}
+\newcommand*{\FF}{\ensuremath{\text{FF}}}
+\newcommand*{\WW}{\ensuremath{W^+W^-}} %%
+
+\newcommand*{\PowhegPythiaEight}{\textsc{Powheg+Pythia8}\xspace}
+\newcommand*{\AlpgenPythiaSix}{\textsc{Alpgen+Pythia6}\xspace}
+\newcommand*{\AlpgenHerwig}{\textsc{Alpgen+Herwig}\xspace}
+\newcommand*{\PYTHIAsix}{\textsc{Pythia6}\xspace}
+
+\newcommand*{\pTll}{\ensuremath{p_{\textrm{T}}^{\ell\ell}}}
+\newcommand*{\pTemu}{\ensuremath{p_{\textrm{T}}^{e\mu}}}
+\newcommand*{\pTmumu}{\ensuremath{p_{\textrm{T}}^{\mu\mu}}}
+\newcommand*{\mll}{\ensuremath{m_{\ell\ell}}}
+\newcommand*{\memu}{\ensuremath{m_{e\mu}}}
+%\newcommand*{\mT}{\ensuremath{m_{\textrm{T}}}}
+\newcommand*{\dFll}{\ensuremath{\Delta\phi_{\ell\ell}}}
+\newcommand*{\dFem}{\ensuremath{\Delta\phi_{e\mu}}}
+\newcommand*{\Ztau}{\ensuremath{Z\to\tau\tau}}
+\newcommand*{\DZ}{\ensuremath{\Delta z_0^{\mathrm{iso}}}}
+\newcommand*{\fEL}{\ensuremath{f_{\mathrm{EL}}}}
+\newcommand*{\fgam}{\ensuremath{f_{\gamma}}}
+%\newcommand*{\fP}{\ensuremath{f^{\mathrm{P}}}}
+%\newcommand*{\fAP}{\ensuremath{f^{\mathrm{AP}}}}
+%\newcommand*{\fAH}{\ensuremath{f^{\mathrm{AH}}}}
+%\newcommand*{\LambdaCutoff}{\ensuremath{\Lambda_{\textrm{cutoff}}}}
+%\newcommand*{\BR}{\textrm{BR}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\LARGE} % format
+{\centering Chapter \thechapter} % label
+{0.5ex} % sep
+{
+    \vspace{0.5ex}
+    \centering
+} % before-code
+ 
+\titleformat{\section}[hang]
+{\Large\bfseries}
+{\thesection}{0.5em}{}
+ 
+\titleformat{\subsection}[hang]
+{\large\bfseries}
+{\thesubsection}{0.5em}{}
+
+\titleformat{\subsubsection}[hang]
+{\normalsize\bfseries}
+{\thesubsubsection}{0.5em}{}
+
+
+%\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Glossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{sections/glossaries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{bibtex/SM}           % bib database file refs.bib
+\bibliography{bibtex/EXCLH}           % bib database file refs.bib
+\bibliography{bibtex/lhc}           % bib database file refs.bib
+\bibliography{bibtex/ATLAS}           % bib database file refs.bib
+\bibliography{bibtex/OBJECTS}           % bib database file refs.bib
+\bibliography{bibtex/SIMULATION}           % bib database file refs.bib
+\bibliography{bibtex/chargedH}           % bib database file refs.bib
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{document}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+    \input{\UTALATEXPATH psfig.sty}
+%     SAMPLE FRONT MATTER:
+       \graduationmonth{December}
+       \graduationyear{2016}
+       \defensedate{November 15, 2016}
+       \author{LAST FEREMENGA}
+       \committee{Jaehoon Yu}{Sergei Chekanov}{Andrew Brandt}{Sangwook Park}{Haleh Hadavand}
+       \title{\Large Searches For The Exclusive Neutral Higgs and the Charged Higgs 
+							Bosons with the ATLAS Detector 
+							at the LHC }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  title page  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+         \titlepage
+
+% If submitting electronically, the signature page should not be included.
+% You should then comment out the line that produces the signature page and
+% move the title page up here so that it appears first.
+% added by Darin Brezeale, Fri Jan 11 10:29:12 CST 2008
+%       \signaturepageMs
+%        \signaturepagePhD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  copyright page  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%         \copyrightpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  Dedication page  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\thispagestyle{empty}
+%
+%	\vspace*{1.0in}
+%	\begin{center}
+%		To my mother Enery and my father Amon. 
+%	\end{center}
+%
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  acknowledgements  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{acknowledgements}
+%
+%     \input acknowledge.tex
+%
+%\end{acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%     abstract    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{abstract}
+%	\input abstract.tex
+%
+%	\indent
+%\end{abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+\addtocontents{toc}{\noindent\mbox{Chapter}\hfill\mbox{Page}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  First and Following Chapters  %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input sections/intro.tex
+
+\input sections/theory.tex
+
+\input sections/experimentalSetup.tex      
+
+\input sections/evSim.tex
+
+\input sections/objects.tex
+
+\input sections/chargedH.tex
+
+\input sections/exclH.tex
+
+\input sections/conc.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%                  Appendices                  %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\appendix
+
+\printbibliography
+
+%\printglossary 
+%\printglossary[type=\acronymtype]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%         Biographical Statement               %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\thebiography
+%\input biography.tex
+
+\end{document}

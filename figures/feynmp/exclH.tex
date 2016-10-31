@@ -1,0 +1,44 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+ %\usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{xH}
+\fmfframe(15,20)(30,20){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(180,100)
+\vspace*{\baselineskip}
+%\setlength{\unitlength}{1.2\unitlength}
+%bottom and top verticies
+	\fmfv{label=$p_1$}{P1}
+	\fmfv{label=$p_2$}{P2}
+	\fmfv{label=$p_1$}{P1'}
+	\fmfv{label=$p_2$}{P2'}
+	\fmfv{label={\Large $H$}}{H}
+  \fmfleft{P1,P2}
+  \fmfright{P1',H,P2'}
+%incoming protons to gluon vertices
+  %%\fmf{fermion,tension=2,lab=$P_1$}{P1,g1}
+  %%\fmf{fermion,tension=2,lab=$P_2$}{P2,g2}
+  \fmf{fermion}{P1,g1}
+  \fmf{fermion}{P2,g2}
+%blobs at gluon vertices, 0.16w is the size of blob
+\fmfblob{.15w}{g1,g2}
+\fmf{gluon,tension=0.2,lab.side=right,lab={\Large $x_{1}$}}{g1,v1}
+\fmf{gluon,tension=0.}{g1,g2}
+\fmf{phantom,lab.side=left,lab={\Large $x_{1}^{'}$}}{g1,v3}
+\fmf{phantom,lab.side=left,lab={\Large $x_{2}^{'}$}}{v3,g2}
+\fmf{gluon,tension=0.2,lab.side=right,lab={\Large $x_{2}$}}{v2,g2}
+\fmfpoly{empty,tension=0.28, label={\Large\bf $t$}}{v2,v1,t}
+\fmf{dashes}{t,H}
+%outgoing protons
+\fmf{fermion}{g1,P1'}
+\fmf{fermion}{g2,P2'}
+\vspace*{\baselineskip}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

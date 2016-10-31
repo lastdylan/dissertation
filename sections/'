@@ -1,0 +1,89 @@
+\subsection{Expected and Observed Event Yields}
+\par After all background processes have been estimated, and their associated systematic 
+uncertainties have been evaluated, final kinematic distributions in the signal region are 
+examined. Figure~\ref{fig:primSR} shows such n-1 distributions for \met\ and \mT. The black vertical 
+lines show the values at which the selection criteria for the plotted variables is imposed.
+ The yellow band in the ratio plot encodes the overall systematic and statistical uncertainties, 
+summed in quadrature. In Figure~\ref{fig:primSR} this band is shown only in  
+the signal region because that is where the systematic uncertainties were evaluated.        
+Table~\ref{tab:yieldsSR} shows the expected event yields from background processes and 
+the observed yield from 14.7~\ifb of data, accumulated during the 2015 and 2016 data taking 
+periods. 
+
+\begin{figure}[h]
+\begin{subfigure}{0.5\textwidth}
+					 \includegraphics[width=\textwidth]{figures/met_SR_nMinus1.eps}
+\caption{\met}
+\end{subfigure} % 
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/mT_SR_nMinus1.eps}
+\caption{\mT}
+\end{subfigure}
+\caption{Primary signal region plots}
+\label{fig:primSR}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccc}
+Category & Source & Event Yield \\
+\hline
+\multirow{4}{*}{True \tauvis} & \ttbar\ + Single Top & 2880$\pm$770$\pm$25 \\
+															& $W\to\tau\nu$        & 265$\pm$51$\pm$18   \\
+															& $Z\to\tau\tau$       & 44.3$\pm$7.1$\pm$7.6 \\
+															& $VV$								 & 13.8$\pm$2.2$\pm$1.7 \\ 
+\hline
+$j\to\tau$										& All processes				 & 1170$\pm$110$\pm$16 \\
+$l\to\tau$										& All processes 			 & 126$\pm$25$\pm$6.5  \\
+\hline
+															& Total Background     & 4500$\pm$779$\pm$36.4 \\				
+Data (14.7~\ifb)							&											 & 4645   \\
+\hline
+\end{tabular}
+\caption{Expected event yields in the signal region, compared to observed event yields from data}
+\label{tab:yieldsSR}
+\end{table}
+
+\par Figures~\ref{fig:secSRa} and~\ref{fig:secSRb} show distributions of other kinematic variables 
+in the signal region. These are the $\pt,\eta,\phi$ of the $\tauvis$ , the number of reconstructed jets, the number 
+of $b-$tagged reconstructed jets and the $\Delta\phi(\tau,\met)$. All these figures show that the 
+\ttbar\ background with true \tauvis\ is the most dominant. 
+
+\begin{figure}[!h]
+\begin{subfigure}{0.5\textwidth}
+					 \includegraphics[width=\textwidth]{figures/tauPt_SR.eps}
+\end{subfigure}  
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/jets_SR.eps}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/bJets_SR.eps}
+\end{subfigure} %\\
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/tauMetPhi_SR.eps}
+\end{subfigure}
+\caption{More kinematic distributions in the signal region}
+\label{fig:secSRa}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/tauEta_SR.eps}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{figures/tauPhi_SR.eps}
+\end{subfigure}
+\caption{More kinematic distributions in the signal region}
+\label{fig:secSRb}
+\end{figure}
+
+\par  
+1. parameter of interest is XS
+2. systematic uncertainties that are nuisance parameters are in a table, 
+removing those with less than 0.5\% impact
+3. nuisance parameters profiled, as shown in figure .., showing that tauvis uncertainties dominate
+4. fit data to the b-only hypothesis and conclude that data is consistent with SM
+4. data consistent with SM, so exclusion limits set using the CLS method ..
+5. show expected limits (expected if data agreed perfectly with expected background)
+6. show observed limits (observed data is used)
+7. show effects of certain uncertainties on limits, for selected mass points ( this includes statistical uncertainties) 

@@ -1,0 +1,33 @@
+\documentclass{standalone}
+ \usepackage{feynmp}
+% \usepackage{feynmp-auto}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+
+\begin{fmffile}{phFerm}
+\fmfframe(15,20)(10,15){% adjust the padding here to avoid labels being out of bounds
+\begin{fmfgraph*}(150,100)
+\vspace*{\baselineskip}
+% left and right anchors
+	\fmfv{label=$f$}{q1}
+	\fmfv{label=$f$}{q2}
+	\fmfv{label=$A_{\mu}$}{g}
+  \fmfleft{g}
+  \fmfright{q1,q2}
+%gluon
+\fmfv{label=$e\gamma^\mu Q_f$,label.dist=30}{v1}
+\fmf{boson}{g,v1}
+%quarks  
+\fmf{fermion, tension=0.7}{q1,v1}
+\fmf{fermion, tension=0.7}{v1,q2}
+\fmfdotn{v}{1}
+%\fmffreeze
+%\fmfshift{10left}{v1}
+%\vspace*{\baselineskip}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{document}
+

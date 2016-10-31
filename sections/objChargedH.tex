@@ -1,0 +1,84 @@
+\par Physics objects used in this search are jets, hadronic $\tau$ leptons, electrons, 
+muons and missing transverse energy. Reconstruction and identification of these objects 
+from detector signals is discussed in detail in Chapter~\ref{obj}. This section summarizes other 
+selection criteria imposed on these physics objects, specific to this analysis. 
+
+\par Basic jet reconstruction is discussed in Section~\ref{sec:jets}. Of the  
+jets that were reconstructed using the anti-$k_T$ algorithm with $\Delta R=0.4$, only those 
+with $\pT>25~\GeV$ and $|\eta|<2.5$ were considered. For jets with $\pT<60~\GeV$, the Jet Vertex 
+Tagger (JVT) was used to reduce effects from pileup events. The $\operatorname{b-}$tagging algorithm 
+described in Section~\ref{sec:bTag} was applied on each jet that passed this selection criteria, ultimately 
+assigning to it a {\it $\operatorname{b-}$tagging score}. The working point for the score used to identify $\operatorname{b-}$tagged 
+jets in this analysis corresponds to a 70\% efficiency in identifying $\operatorname{b-}$jets 
+in \ttbar events, at a background rejection rate of 400.   
+
+\par Primary reconstruction of hadronic $\tau$ leptons is discussed in Section~\ref{sec:tau}. 
+Since every hadronic $\tau$ decay includes a $\nu_\tau$ in its final state, the reconstruction 
+was performed only on the visible components of the decay products. The reconstructed object, which 
+estimates the $\tau$ lepton, is referred to here as a \tauvis.   
+Treatment of $\tauvis$ was separated into 1-prong and 3-prong candidates, corresponding to decays 
+to 1 $\pipm$ or 3 $\pipm$ respectively.  A boosted decision 
+tree (BDT) was trained to distinguish $\tauvis$ candidates from jets initiated by quarks or gluons. 
+Loose and medium working points on the BDT output were used for different purposes in this search. 
+The loose working point corresponds to 70\% and 65\% identification efficiencies on the 1-prong and 3-prong 
+$\tauvis$ candidates. The medium working point corresponds to 55\% and 40\% identification efficiencies on 
+the 1-prong and 3-prong $\tauvis$ candidates. In both cases, the background rejection rate 
+was found to be of $\mathcal{O}(10^2)$. All $\tauvis$ candidates were required to have $\pt>40~\GeV$ and $|\eta|<2.3$. 
+
+\par Electron and muon reconstruction and identification is discussed in detail in Sections~\ref{sec:ele} and 
+\ref{sec:mu}. Loosely identified and loosely isolated electrons were selected. To further ensure that the electrons originated 
+from the primary vertex, $|z_0\sin\theta|<0.5$ and $|d_0/\sigma_{d_0}|<5$ we imposed.  
+Electron candidates that satisfied these selection criteria were additionally required 
+to have $\pt>20~\GeV$, and be within $|\eta|<2.47$, excluding transition between the barrel and end-cap regions $1.37<|\eta|<1.52$.
+Muons were also loosely identified and isolated. In addition, impact parameter selection 
+criteria were imposed on them to ensure that they originated from the primary 
+vertex: $|z_0\sin\theta|<0.5$ and $|d_0/\sigma_{d_0}|<3$. 
+Those that satisfied these requirements were required to have $\pt>20~\GeV$ and be within $|\eta|<2.5$.  
+
+\par Overlap between the physics objects discussed above were resolved using the following priority list: 
+$\mu\to e\to\tauvis\to\text{jet}$. If an electron was found within $\Delta R < 0.2$ 
+of a reconstructed muon, the electron was removed from the list of physics objects in that event. This is 
+because since electrons experience photon radiation and brehmsstrahlung at a higher rate than muons, they are   
+more difficult to reconstruct. If a $\tauvis$ was reconstructed within $\Delta R<0.2$ of an electron 
+or muon, the $\tauvis$ was removed. Likewise, if a jet was reconstructed within $\Delta R<0.2$ of an electron, muon 
+or $\tau$ lepton, the jet was removed from the list.   
+
+\par \met, the magnitude of the missing transverse momentum, was reconstructed after all 
+the other physics objects were identified and overlaps were resolved. 
+It was reconstructed as the negative vector sum of all the reconstructed and calibrated objects, and the reconstructed 
+tracks that were not associated to any physics objects. All these objects were required to originate from the hard 
+scatter event. This association with the hard scatter event reduced effects from pileup events on the reconstructed 
+\met.
+
+\par Table~\ref{tab:objcH} summarizes all the physics object selection criteria for this analysis.     
+
+\begin{table}[!h]
+\centering
+  \resizebox{\textwidth}{!}{
+   \begin{tabular}{|l|c|}
+\hline
+ Physics Object           								& Selection Criteria \\
+\hline\hline
+ \multirow{3}{*}{Jets}  & anti-$k_T$ with $\Delta R=0.4$ \\
+			& $\pT>25~\GeV$, $|\eta|<2.5$    \\
+			& JVT for $\pt<60~\GeV$ \\
+\hline 
+$b$-tagged Jets & $b$-tagging score at 70\% efficiency working point \\
+\hline
+  \multirow{3}{*}{\tauvis} & BDT score working point at 55\%(40\%) efficiency for 1(3)-prong for medium \\
+ 				& BDT score working point at 70\%(65\%) efficiency for 1(3)-prong for loose \\
+				& $\pT>40~\GeV$, $|\eta|<2.3$ \\
+\hline  
+  \multirow{3}{*}{Electrons} & Loose ID \\
+					& Loose Isolation \\
+					& $\pT>20~\GeV$, $|\eta|<2.47$ excluding $1.37<|\eta|<1.52$ \\
+\hline
+  \multirow{3}{*}{Muons}     & Loose ID \\
+					& Loose Isolation \\
+					& $\pT>20~\GeV$, $|\eta|<2.5$ \\
+\hline 
+   \end{tabular}
+}
+\caption{Selection criteria for physics objects.}
+\label{tab:objcH}
+\end{table}
