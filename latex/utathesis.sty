@@ -107,7 +107,7 @@
 \displaywidowpenalty= 10000   % no widows allowed in "displayed" text
 \def\myskip{\vskip 9\p@}
 \def\stretchv@l{1.66}
-%\renewcommand{\baselinestretch}{\stretchv@l} % double spacing
+\renewcommand{\baselinestretch}{\stretchv@l} % double spacing
 \pagenumbering{roman}
 \renewcommand{\floatpagefraction}{0.8}
 \setcounter{secnumdepth}{4}
@@ -137,9 +137,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\appr@val
-  {The members of the Committee approve the doctoral dissertation of  \\
-\vspace{-2ex}
-   { \auth@r} \par}
+  {The members of the Committee approve the doctoral \vspace{-2ex}\\
+   dissertation of { \auth@r} \par}
 \def\d@gree{DOCTOR OF PHILOSOPHY} 
 \def\d@greeinit{Ph.D.}
 \def\printDefenseDate{
@@ -298,11 +297,10 @@
   \newpage \thispagestyle{empty}
   \vspace*{54\p@}
   {\centering
-   {\large\bf\ti@tle} \\
-%    {\normalsize\ti@tle} 
+%   {\large\bf\ti@tle} \\
+    {\normalsize\ti@tle} \\
     \vspace{0.5in}
-   by \\ 
-		\auth@rcaps \\
+    by \\ \auth@rcaps \\
     \vspace{1in}
         Presented to the Faculty of the Graduate School of \\
     The University of Texas at Arlington in Partial Fulfillment \\
